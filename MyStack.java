@@ -1,12 +1,11 @@
 package org.example;
 
-public class MyArrayList {
-
+public class MyStack {
     private Object[] array;
     private int size;
 
 
-    public MyArrayList() {
+    public MyStack() {
         array = new Object[0];
         size = 0;
     }
@@ -26,26 +25,45 @@ public class MyArrayList {
     }
 
 
-    public void add(Object value) {
+    public void push(Object value) {
         increaseArray();
-        array[size] = value;
+        array[array.length-1] = value;
         size++;
     }
 
-    public void remove(int index) {
+    public Object pop() {
+        if (size == 0) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        Object value = array[array.length-1];
+        size--;
+        decreaseArray();
+        return value;
+    }
 
+
+    public Object peek() {
+        if (size == 0) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        return array[array.length-1];
+    }
+
+    public void remove(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Wrong index");
         }
 
-        for (int i = index; i < size - 1; i++) {
-            array[i] = array[i + 1];
+        int elementsToMove = size - index - 1;
+        if (elementsToMove > 0) {
+            System.arraycopy(array, index + 1, array, index, elementsToMove);
         }
 
-        array[size - 1] = null;
         size--;
+
         decreaseArray();
     }
+
 
     public void clear() {
         array = new Object[0];
@@ -54,13 +72,6 @@ public class MyArrayList {
 
     public int size() {
         return size;
-    }
-
-    public Object get(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Wrong index");
-        }
-        return array[index];
     }
 
 

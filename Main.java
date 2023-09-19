@@ -3,13 +3,13 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("----------------------------------- MyArrayList test");
+        System.out.println("--- MyArrayList test ---");
 
-        MyArrayList testArr = new MyArrayList();            // MyArrayList test
+        MyArrayList testArr = new MyArrayList();
 
-        testArr.add("first");
-        testArr.add("second");
-        testArr.add("third");
+        testArr.add("Rick");
+        testArr.add("Jerry");
+        testArr.add("Morty");
 
         System.out.println(testArr.size());
 
@@ -22,7 +22,7 @@ public class Main {
         testArr.clear();
         System.out.println(testArr.size());
 
-        System.out.println("----------------------------------- MyLinkedList test");
+        System.out.println("--- MyLinkedList test ---");
 
         MyLinkedList testLink = new MyLinkedList();
 
@@ -39,7 +39,44 @@ public class Main {
         testLink.clear();
         System.out.println(testLink.size());
 
-        System.out.println("----------------------------------- MyQueue test");
+        System.out.println("--- MyQueue test ---");
+
+        MyQueue testQueue = new MyQueue();
+
+        testQueue.add("Rick");
+        testQueue.add("Jerry");
+        testQueue.add("Morty");
+        System.out.println(testQueue.size());
+
+        System.out.println(testQueue.peek());
+
+        System.out.println(testQueue.poll());
+        System.out.println(testQueue.size());
+
+        testQueue.clear();
+        System.out.println(testQueue.size());
+
+
+        System.out.println("--- MyStack test ---");
+
+        MyStack testStack =new MyStack();
+
+        testStack.push("Rick");
+        testStack.push("Jerry");
+        testStack.push("Morty");
+
+        System.out.println(testStack.size());
+
+        testStack.remove(1);
+        System.out.println(testStack.size());
+
+        System.out.println(testStack.peek());
+
+        System.out.println(testStack.pop());
+        System.out.println(testStack.size());
+
+        testStack.clear();
+        System.out.println(testStack.size());
 
 
     }

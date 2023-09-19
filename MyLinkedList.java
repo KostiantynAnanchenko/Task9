@@ -1,7 +1,6 @@
 package org.example;
 
 public class MyLinkedList {
-    // Клас Node внутрішнього класу для представлення вузла списку
     private class Node {
         Object data;
         Node next;
