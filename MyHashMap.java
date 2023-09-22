@@ -21,7 +21,12 @@ public class MyHashMap {
     }
 
     private int hash(Object key) {
-        return key.hashCode() % (table.length+1);
+        if (table.length == 0) {
+            return 0;
+        } else {
+            return key.hashCode() % table.length;
+
+        }
     }
 
     public void put(Object key, Object value) {
