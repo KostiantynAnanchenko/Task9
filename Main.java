@@ -22,6 +22,8 @@ public class Main {
         testArr.clear();
         System.out.println(testArr.size());
 
+
+
         System.out.println("--- MyLinkedList test ---");
 
         MyLinkedList testLink = new MyLinkedList();
@@ -39,6 +41,8 @@ public class Main {
         testLink.clear();
         System.out.println(testLink.size());
 
+
+
         System.out.println("--- MyQueue test ---");
 
         MyQueue testQueue = new MyQueue();
@@ -55,6 +59,7 @@ public class Main {
 
         testQueue.clear();
         System.out.println(testQueue.size());
+
 
 
         System.out.println("--- MyStack test ---");
@@ -77,6 +82,25 @@ public class Main {
 
         testStack.clear();
         System.out.println(testStack.size());
+
+
+        System.out.println("--- MyHashMap test ---");
+
+        MyHashMap testHash = new MyHashMap();
+
+        testHash.put(234,"Rick");
+        testHash.put(70,"Jerry");
+        testHash.put(120,"Morty");
+
+        System.out.println(testHash.size());
+
+        System.out.println(testHash.get(234));
+
+        testHash.remove(70);
+        System.out.println(testHash.size());
+
+        testHash.clear();
+        System.out.println(testHash.size());
 
 
     }
